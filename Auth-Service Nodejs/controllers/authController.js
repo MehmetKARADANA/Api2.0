@@ -1,6 +1,6 @@
 const asyncHanlder = require('express-async-handler');
 
-const isAuthenticate = asyncHanlder(async(req, res) => {
+const isAuthenticate = asyncHandler(async(req, res) => {
     res.json("access granted")
 })
 

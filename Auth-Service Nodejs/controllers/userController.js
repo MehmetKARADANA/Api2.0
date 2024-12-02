@@ -4,8 +4,8 @@ const asyncHandler = require("express-async-handler");
 const { BloomFilter } = require('bloomfilter')
 
 const filter = new BloomFilter(
-  1000,//bu parameterleri anlatım üzerinde anla
-  4
+  1000,//bit sayısı
+  4// hash fonksiyonu sayısı 
 );
 
 const User = require('../models/userModel');
