@@ -1,3 +1,235 @@
+Tour Agency API Documentation (2.0)
+
+Overview 
+
+This documentation provides details on how to interact with the endpoints available in the Tour Agency API. The API includes endpoints for user registration and fetching room data from various services. 
+
+ 
+
+Base URLs 
+
+Kotlin Service: http://localhost:8082 
+
+Java Service: http://localhost:8081 
+
+Go Service: http://localhost:8083 
+
+Registration Service: http://localhost:8084 
+
+ 
+
+Endpoints 
+
+1. Register a User 
+
+URL: http://localhost:8084/api/users/register 
+
+Method: POST 
+
+Content-Type: application/x-www-form-urlencoded 
+
+Body Parameters: 
+
+Key 
+
+Type 
+
+Description 
+
+name 
+
+String 
+
+The user's name 
+
+password 
+
+String 
+
+The user's password 
+
+Example Request: 
+
+http 
+
+Kodu kopyala 
+
+POST /api/users/register HTTP/1.1 
+Host: localhost:8084 
+Content-Type: application/x-www-form-urlencoded 
+ 
+name=mehmet61616&password=123456 
+ 
+
+ 
+
+2. Get Rooms (Kotlin Service) 
+
+URL: http://localhost:8082/api/getRooms 
+
+Method: GET 
+
+Authorization: Bearer Token 
+
+Headers: 
+
+Key 
+
+Value 
+
+Authorization 
+
+Bearer <your-token> 
+
+Example Request: 
+
+http 
+
+Kodu kopyala 
+
+GET /api/getRooms HTTP/1.1 
+Host: localhost:8082 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9... 
+ 
+
+ 
+
+3. Get Rooms (Java Service) 
+
+URL: http://localhost:8081/api/getRooms 
+
+Method: GET 
+
+Authorization: Bearer Token 
+
+Headers: 
+
+Key 
+
+Value 
+
+Authorization 
+
+Bearer <your-token> 
+
+Example Request: 
+
+http 
+
+Kodu kopyala 
+
+GET /api/getRooms HTTP/1.1 
+Host: localhost:8081 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9... 
+ 
+
+ 
+
+4. Get Rooms (Go Service) 
+
+URL: http://localhost:8083/api/getRooms 
+
+Method: GET 
+
+Authorization: Bearer Token 
+
+Headers: 
+
+Key 
+
+Value 
+
+Authorization 
+
+Bearer <your-token> 
+
+Example Request: 
+
+http 
+
+Kodu kopyala 
+
+GET /api/getRooms HTTP/1.1 
+Host: localhost:8083 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9... 
+ 
+
+ 
+
+Notes 
+
+Ensure to replace <your-token> with a valid JWT token. 
+
+For testing, tools like Postman or curl can be used to send requests and verify responses. 
+
+All endpoints require appropriate services to be running locally. 
+
+You can run a server for each tourism agency by changing the port and agency name according to the following details: 
+
+Servers List: 
+
+yaml 
+
+Kodu kopyala 
+
+servers: 
+  - name: "Istanbul Agency" 
+    url: "http://host.docker.internal:3007" 
+    distance_km: 10 
+  - name: "Paris Agency" 
+    url: "http://host.docker.internal:3001" 
+    distance_km: 2005 
+  - name: "New York Agency" 
+    url: "http://host.docker.internal:3002" 
+    distance_km: 8000 
+  - name: "Tokyo Agency" 
+    url: "http://host.docker.internal:3003" 
+    distance_km: 9000 
+  - name: "Sydney Agency" 
+    url: "http://host.docker.internal:3004" 
+    distance_km: 15000 
+  - name: "Moscow Agency" 
+    url: "http://host.docker.internal:3005" 
+    distance_km: 3000 
+  - name: "Cape Town Agency" 
+    url: "http://host.docker.internal:3006" 
+    distance_km: 8000 
+ 
+
+For each server, simply change the port and agency name in the code and run the server. For example, for the Istanbul Agency, update the port to 3007 and the agency to "Istanbul Agency", then run the server using Node.js. 
+
+Running the Servers 
+
+Install dependencies: 
+
+bash 
+
+Kodu kopyala 
+
+npm install express 
+ 
+
+Save the server code in a file, for example, agency-server.js. 
+
+Run the server: 
+
+bash 
+
+Kodu kopyala 
+
+node agency-server.js 
+ 
+
+ 
+
+Notes 
+
+For testing, tools like Postman or curl can be used to send requests and verify responses. 
+
+All endpoints require appropriate services to be running locally. 
+
+Make sure to modify the port and agency name for each server. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 GlobalTour (English)
 
 Project Description
